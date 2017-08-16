@@ -10,7 +10,18 @@ public class MorseCipher {
 
     public MorseCipher() {}
 
-    public String encipher(String text){
+    public String encipher(String text) {
+
+        String encipheredText = "";
+        HashMap<String, String> morseCode = DataManager.loadFile("data_manager/morse_code.txt");
+
+        for (int i = 0; i < text.length(); i ++){
+          Character letter = text.charAt(i);
+
+          newString += keyCipher.get(letter.toString());
+        }
+
+        return "######## ciphered: " + encipheredText + " #########";
 	}
 
     public String decipher(String text){
