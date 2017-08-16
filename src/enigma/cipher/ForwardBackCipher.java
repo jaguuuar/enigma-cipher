@@ -2,10 +2,10 @@ public class ForwardBackCipher
 {
     public static void main(String[] args)
     {
-        String ciphered = encipherForwardBack("DUPA");
+        String ciphered = encipherForwardBack("swinia arka");
         System.out.println(ciphered);
 
-        String ciphered2 = decipherForwardBack("ecvtqobz");
+        String ciphered2 = decipherForwardBack("trxvjhomjhbz bzsqljbz");
         System.out.println(ciphered2);
     }
 
@@ -28,17 +28,22 @@ public class ForwardBackCipher
 
         for (int i = 0; i < text.length(); i++)
         {
-            for (int j = 1; j < 27; j++)
+            char textLetter = Character.toLowerCase(text.charAt(i));
+            if (textLetter == ' ')
+                encipherText = encipherText + " ";
+
+            else
             {
-                char textLetter = Character.toLowerCase(text.charAt(i));
-                char alphabetLetter = alphabet[j];
-                if(textLetter == alphabetLetter )
+                for (int j = 1; j < 27; j++)
                 {
-                    encipherText = encipherText + alphabet[j + 1];
-                    encipherText = encipherText + alphabet[j - 1];
+                    char alphabetLetter = alphabet[j];
+                    if(textLetter == alphabetLetter )
+                    {
+                        encipherText = encipherText + alphabet[j + 1];
+                        encipherText = encipherText + alphabet[j - 1];
+                    }
                 }
             }
-
         }
         return encipherText;
     }
@@ -51,16 +56,19 @@ public class ForwardBackCipher
 
         for (int i = 0; i < text.length(); i = i + 2)
         {
-            for (int j = 1; j < 27; j++)
+            char textLetter = Character.toLowerCase(text.charAt(i));
+            if (textLetter == ' ')
+                decipherText = decipherText + " ";
+
+            else
             {
-                char textLetter = Character.toLowerCase(text.charAt(i));
-                char alphabetLetter = alphabet[j];
-                if(textLetter == alphabetLetter )
+                for (int j = 1; j < 27; j++)
                 {
-                    decipherText = decipherText + alphabet[j - 1];
+                    char alphabetLetter = alphabet[j];
+                    if(textLetter == alphabetLetter )
+                        decipherText = decipherText + alphabet[j - 1];
                 }
             }
-
         }
         return decipherText;
     }
