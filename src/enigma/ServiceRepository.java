@@ -14,4 +14,8 @@ public class ServiceRepository implements ServiceRepository, ServiceRegistry {
     public ServiceRepository(){
         this.services = new LinkedList<EnigmaService>();
     }
+
+    public void register(EnigmaService service){
+        this.services.add(service);
+    }
 }
