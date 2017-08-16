@@ -1,32 +1,15 @@
-public class ForwardBackCipher
-{
-    public static void main(String[] args)
-    {
-        String ciphered = encipherForwardBack("123swinia arka 123");
-        System.out.println(ciphered);
+package enigma.cipher;
 
-        String ciphered2 = decipherForwardBack("123trxvjhomjhbz bzsqljbz 123");
-        System.out.println(ciphered2);
+import services.EnigmaService;
 
-        char test = 'g';
-        System.out.println(Character.isLetter(test));
+public class ForwardBackCipher implements EnigmaService {
 
+	public static final boolean KEY_REQUIRED = false;
 
-    }
+	public ForwardBackCipher(){
+	}
 
-    public static char[] makeAlphabetTable()
-    {
-        char[] alpha = new char[28];
-        alpha[0] = 'z'; alpha[27] = 'a';
-        int k = 0;
-        for(int i = 1; i < 27; i++)
-        {
-            alpha[i] = (char)(97 + (k++));
-        }
-        return alpha;
-    }
-
-    public static String encipherForwardBack(String text)
+	public String encipher(String text)
     {
         char[] alphabet = makeAlphabetTable();
         String encipherText = "";
@@ -51,11 +34,10 @@ public class ForwardBackCipher
                 }
             }
         }
-        return encipherText;
-    }
+		return "###### ciphered: "+encipherText+" #####";
+	}
 
-
-    public static String decipherForwardBack(String text)
+	public String decipher(String text)
     {
         char[] alphabet = makeAlphabetTable();
         String decipherText = "";
@@ -80,7 +62,29 @@ public class ForwardBackCipher
                 }
             }
         }
-        return decipherText;
+		return "###### deciphered: "+decipherText+" #####";
+	}
+
+	public String getName(){
+		return "ForwardBackCipher";
+	}
+
+	public boolean isKeyRequired(){
+		return KEY_REQUIRED;
+	}
+
+	public void setKey(String key) {}
+
+    public static char[] makeAlphabetTable()
+    {
+        char[] alpha = new char[28];
+        alpha[0] = 'z'; alpha[27] = 'a';
+        int k = 0;
+        for(int i = 1; i < 27; i++)
+        {
+            alpha[i] = (char)(97 + (k++));
+        }
+        return alpha;
     }
 
 }
