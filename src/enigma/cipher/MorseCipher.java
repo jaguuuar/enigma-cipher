@@ -10,12 +10,7 @@ public class MorseCipher {
 
     public MorseCipher() {}
 
-    public static void main(String[] args){
-
-    }
-
     public String encipher(String text){
-		return "###### ciphered: "+text+" #####";
 	}
 
     public String decipher(String text){
