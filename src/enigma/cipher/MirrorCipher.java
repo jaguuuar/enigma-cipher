@@ -1,4 +1,7 @@
 public class MirrorCipher{
+	
+		public static final boolean KEY_REQUIRED = false;
+
 
 		public String encipher(String text){
 		  String reverse = new StringBuffer(text).reverse().toString();
@@ -16,4 +19,8 @@ public class MirrorCipher{
 
 		public boolean isKeyRequired(){
 		  return KEY_REQUIRED;
+		}
+
+		public void setKey(String key) {
+
 		}
