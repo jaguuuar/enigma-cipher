@@ -33,3 +33,8 @@ public class TerminalTranslator {
 				System.out.println(enigma.encipher(scan.nextLine()));
 			}
 		}
+		else if (mode.equalsIgnoreCase("-d")){
+			while(scan.hasNextLine()){
+				System.out.println(enigma.decipher(scan.nextLine()));
+			}
+		}
