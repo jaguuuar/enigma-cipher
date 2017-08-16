@@ -11,7 +11,9 @@ public class DataManager() {
         File file = new File(fileName);
 
         try {
+
             Scanner read = new Scanner(file);
+
             while (read.hasNextLine()) {
                 String line = read.nexLine();
                 String[] splittedCode = line.split("\\s\\|\\s");
@@ -22,8 +24,6 @@ public class DataManager() {
         catch(FileNotFoundException e) {
             System.out.println("File not found!");
         }
-
-
-    return numbersToSort;
+    return codeMap;
     }
 }
