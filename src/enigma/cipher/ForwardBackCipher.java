@@ -2,11 +2,16 @@ public class ForwardBackCipher
 {
     public static void main(String[] args)
     {
-        String ciphered = encipherForwardBack("swinia arka");
+        String ciphered = encipherForwardBack("123swinia arka 123");
         System.out.println(ciphered);
 
-        String ciphered2 = decipherForwardBack("trxvjhomjhbz bzsqljbz");
+        String ciphered2 = decipherForwardBack("123trxvjhomjhbz bzsqljbz 123");
         System.out.println(ciphered2);
+
+        char test = 'g';
+        System.out.println(Character.isLetter(test));
+
+
     }
 
     public static char[] makeAlphabetTable()
@@ -28,19 +33,20 @@ public class ForwardBackCipher
 
         for (int i = 0; i < text.length(); i++)
         {
-            char textLetter = Character.toLowerCase(text.charAt(i));
-            if (textLetter == ' ')
-                encipherText = encipherText + " ";
+            char textCharacter = Character.toLowerCase(text.charAt(i));
+
+            if (!Character.isLetter(textCharacter))
+                encipherText += textCharacter;
 
             else
             {
                 for (int j = 1; j < 27; j++)
                 {
                     char alphabetLetter = alphabet[j];
-                    if(textLetter == alphabetLetter )
+                    if(textCharacter == alphabetLetter )
                     {
-                        encipherText = encipherText + alphabet[j + 1];
-                        encipherText = encipherText + alphabet[j - 1];
+                        encipherText += alphabet[j + 1];
+                        encipherText += alphabet[j - 1];
                     }
                 }
             }
@@ -54,19 +60,23 @@ public class ForwardBackCipher
         char[] alphabet = makeAlphabetTable();
         String decipherText = "";
 
-        for (int i = 0; i < text.length(); i = i + 2)
+        for (int i = 0; i < text.length(); i++)
         {
-            char textLetter = Character.toLowerCase(text.charAt(i));
-            if (textLetter == ' ')
-                decipherText = decipherText + " ";
+            char textCharacter = Character.toLowerCase(text.charAt(i));
+
+            if (!Character.isLetter(textCharacter))
+                decipherText += textCharacter;
 
             else
             {
                 for (int j = 1; j < 27; j++)
                 {
                     char alphabetLetter = alphabet[j];
-                    if(textLetter == alphabetLetter )
-                        decipherText = decipherText + alphabet[j - 1];
+                    if(textCharacter == alphabetLetter )
+                    {
+                        decipherText += alphabet[j - 1];
+                        i++;
+                    }
                 }
             }
         }
