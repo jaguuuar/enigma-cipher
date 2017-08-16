@@ -20,4 +20,6 @@ public class MorseCipher {
 		return KEY_REQUIRED;
 	}
 
+    public void setKey(String key) {}
+
 }
