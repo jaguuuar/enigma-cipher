@@ -23,3 +23,13 @@ public class TerminalTranslator {
 	public String getName(){
 		return "TerminalTranslator";
 	}
+
+	public void start(){
+		EnigmaService enigma = provider.getByName(cipherName);
+		Scanner scan = new Scanner(System.in);
+
+        if (mode.equals("-e")){
+			while(scan.hasNextLine()){
+				System.out.println(enigma.encipher(scan.nextLine()));
+			}
+		}
