@@ -2,6 +2,7 @@ package enigma;
 
 import services.EnigmaService;
 import app.Module;
+import enigma.cipher.*;
 
 public class Application {
 
@@ -32,7 +33,7 @@ public class Application {
 
     public static ServiceRepository initializeServiceRepository() {
         ServiceRepository enigmaRep = new ServiceRepository();
-        enigmaRep.register(new FakeEnigma());
+        enigmaRep.register(new ForwardBackCipher());
         return enigmaRep;
     }
 
