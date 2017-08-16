@@ -5,4 +5,10 @@ public class NumericCipher{
   public void setKey(String key) {
 
   }
+
+  public boolean isKeyRequired(){
+    return KEY_REQUIRED;
+  }
+
+  
 }
