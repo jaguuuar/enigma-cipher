@@ -9,3 +9,7 @@ public class MirrorCipher{
 		  String reverse = new StringBuffer(text).reverse().toString();
 		  return "###### deciphered: "+reverse+" #####";
 		}
+
+		public String getName(){
+		  return "MirrorCipher";
+		}
