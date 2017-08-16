@@ -9,3 +9,9 @@ public class TerminalTranslator {
 
 	private ServiceProvider provider;
     private String mode, cipherName, cipherKey;
+
+	public TerminalTranslator(mode, cipherName, cipherKey){
+		this.mode = mode;
+		this.cipherName = cipherName;
+		this.cipherKey = null;
+	}
