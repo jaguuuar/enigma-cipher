@@ -10,7 +10,7 @@ public class TerminalTranslator {
 	private ServiceProvider provider;
     private String mode, cipherName, cipherKey;
 
-	public TerminalTranslator(mode, cipherName, cipherKey){
+	public TerminalTranslator(String mode, String cipherName, String cipherKey){
 		this.mode = mode;
 		this.cipherName = cipherName;
 		this.cipherKey = null;
@@ -39,9 +39,8 @@ public class TerminalTranslator {
 			}
 		}
 		else if (mode.equalsIgnoreCase("-l")){
-			ServiceRepository services = new ServiceRepository();
-			System.out.println("Available Cipher Method:")
-			for (String cipherName : services){
+			System.out.println("Available Cipher Method:");
+			for (String cipherName : provider.listAll()){
 				System.out.println(cipherName);
 			}
 		}
