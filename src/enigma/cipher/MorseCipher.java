@@ -18,14 +18,14 @@ public class MorseCipher {
         for (int i = 0; i < text.length(); i ++){
           Character letter = text.charAt(i);
 
-          newString += keyCipher.get(letter.toString());
+          if (!letter.toString().equals(" ")):
+            encipheredText += morseCode.get(letter.toString()) + "~";
         }
 
         return "######## ciphered: " + encipheredText + " #########";
 	}
 
     public String decipher(String text){
-		return "###### deciphered: "+text+" #####";
 	}
 
     public String getName(){
