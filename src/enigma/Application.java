@@ -27,9 +27,9 @@ public class Application {
     }
 
 
+    public static void initializeServiceRepository() {
 
-
-
+    }
 
 
 
