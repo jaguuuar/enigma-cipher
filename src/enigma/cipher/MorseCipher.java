@@ -6,4 +6,8 @@ public class MorseCipher {
 		return "###### ciphered: "+text+" #####";
 	}
 
+    public String decipher(String text){
+		return "###### deciphered: "+text+" #####";
+	}
+
 }
