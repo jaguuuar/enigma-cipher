@@ -10,4 +10,8 @@ public class MorseCipher {
 		return "###### deciphered: "+text+" #####";
 	}
 
+    public String getName(){
+		return "FakeEnigma";
+	}
+
 }
