@@ -18,4 +18,24 @@ public class ServiceRepository implements ServiceRepository, ServiceRegistry {
     public void register(EnigmaService service){
         this.services.add(service);
     }
+
+    public List<String> listAll(){
+
+  		List<String> result = new LinkedList<String>();
+
+  		for(EnigmaService service : this.services){
+  			result.add(service.getName());
+  		}
+
+  		return result;
+    }
+
+    public EnigmaService getByName(String name){
+  		for(EnigmaService service : this.services){
+  			if (service.getName().equals(name)){
+  				return service;
+  			}
+  		}
+  		return null;
+  	}
 }
