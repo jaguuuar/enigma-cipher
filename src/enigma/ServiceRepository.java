@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ServiceRepository implements ServiceRepository, ServiceRegistry {
 
-    LinkedList<EnigmaService> services;
+    private LinkedList<EnigmaService> services;
 
     public ServiceRepository(){
         this.services = new LinkedList<EnigmaService>();

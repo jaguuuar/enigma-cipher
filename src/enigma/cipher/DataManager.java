@@ -1,9 +1,9 @@
-import java.util.File;
+import java.io.File;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.io.FileNotFoundException;
 
-public class DataManager() {
+public class DataManager {
 
     public static HashMap<String, String> loadFile(String fileName){
 
@@ -15,7 +15,7 @@ public class DataManager() {
             Scanner read = new Scanner(file);
 
             while (read.hasNextLine()) {
-                String line = read.nexLine();
+                String line = read.nextLine();
                 String[] splittedCode = line.split("\\s\\|\\s");
                 codeMap.put(splittedCode[0], splittedCode[1]);
             }
