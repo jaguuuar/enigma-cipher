@@ -29,4 +29,13 @@ public class ServiceRepository implements ServiceRepository, ServiceRegistry {
 
   		return result;
     }
+
+    public EnigmaService getByName(String name){
+  		for(EnigmaService service : this.services){
+  			if (service.getName().equals(name)){
+  				return service;
+  			}
+  		}
+  		return null;
+  	}
 }
