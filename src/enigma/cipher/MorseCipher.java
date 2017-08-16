@@ -1,3 +1,6 @@
+package cipher;
+
+import services.EnigmaService;
 import java.util.Scanner;
 import java.util.ArrayList;
 
