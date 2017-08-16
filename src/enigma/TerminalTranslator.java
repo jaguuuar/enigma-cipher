@@ -15,3 +15,7 @@ public class TerminalTranslator {
 		this.cipherName = cipherName;
 		this.cipherKey = null;
 	}
+
+	public void initialize(ServiceProvider provider){
+		this.provider = provider;
+	}
