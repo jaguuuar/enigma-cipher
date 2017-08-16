@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.lang.StringBuffer;
+
+
 public class MirrorCipher{
 
 		public static final boolean KEY_REQUIRED = false;
@@ -34,3 +38,6 @@ public class MirrorCipher{
 		public void setKey(String key) {
 
 		}
+}
+		// public MirrorCipher(){
+		// }
