@@ -1,5 +1,7 @@
 public class MorseCipher {
 
+    public static final boolean KEY_REQUIRED = false;
+    
     public MorseCipher() {}
 
     public String encipher(String text){
