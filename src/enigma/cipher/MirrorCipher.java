@@ -13,3 +13,7 @@ public class MirrorCipher{
 		public String getName(){
 		  return "MirrorCipher";
 		}
+
+		public boolean isKeyRequired(){
+		  return KEY_REQUIRED;
+		}
