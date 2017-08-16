@@ -1,21 +1,15 @@
+package cipher;
+
+import services.EnigmaService;
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
 
 
-public class NumericCipher{
+
+public class NumericCipher implements EnigmaService{
 
   public static final boolean KEY_REQUIRED = false;
-
-
-  public static void main(String[] args){
-
-    NumericCipher numbCipher = new NumericCipher();
-    Scanner input = new Scanner(System.in);
-    String text = input.nextLine();
-    String enciperText = numbCipher.encipher(text);
-    System.out.println(enciperText);
-  }
 
   public String encipher(String text){
     String newString = "";
@@ -27,9 +21,25 @@ public class NumericCipher{
       newString += keyCipher.get(letter.toString());
 
     }
-    return "ciphered: "+newString+" #####";
+    return "ciphered: "+newString;
   }
+  public String dencipher(String text){
+    String deciphredText = "";
+    HashMap<String, String> keysCipher = DataManager.loadFile("numberscipher.txt");
 
+    for (int i = 0; i < text.length(); i = i + 2){
+      Character number1 = text.charAt(i);
+      Character number2 = text.charAt(i+1);
+      String hiddenLetter = number1.toString() + number2.toString();
+
+      for (String key: keysCipher.keySet()){
+        if (keysCipher.get(key).equals(hiddenLetter)){
+          deciphredText += key;
+        }
+      }
+    }
+		return "deciphered: "+deciphredText;
+	}
 
   public String getName(){
     return "NumericCipher";
