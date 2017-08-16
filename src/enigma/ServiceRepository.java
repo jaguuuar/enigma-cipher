@@ -7,7 +7,7 @@ import services.EnigmaService;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ServiceRepository implements ServiceRepository, ServiceRegistry {
+public class ServiceRepository implements ServiceProvider, ServiceRegistry {
 
     LinkedList<EnigmaService> services;
 
