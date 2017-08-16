@@ -38,3 +38,12 @@ public class TerminalTranslator {
 				System.out.println(enigma.decipher(scan.nextLine()));
 			}
 		}
+		else if (mode.equalsIgnoreCase("-l")){
+			ServiceRepository services = new ServiceRepository();
+			System.out.println("Available Cipher Method:")
+			for (String cipherName : services){
+				System.out.println(cipherName);
+			}
+		}
+	}
+}
