@@ -12,17 +12,19 @@ public class NumericCipher implements EnigmaService{
   public static final boolean KEY_REQUIRED = false;
 
   public String encipher(String text){
+
     String newString = "";
-    HashMap<String, String> keyCipher = DataManager.loadFile("numberscipher.txt");
+    HashMap<String, String> keyCipher = DataManager.loadFile("data_manager/numberscipher.txt");
 
     for (int i = 0; i < text.length(); i ++){
       Character letter = text.charAt(i);
 
       newString += keyCipher.get(letter.toString());
-
     }
+
     return "ciphered: "+newString;
   }
+
   public String dencipher(String text){
     String deciphredText = "";
     HashMap<String, String> keysCipher = DataManager.loadFile("numberscipher.txt");
