@@ -19,3 +19,7 @@ public class TerminalTranslator {
 	public void initialize(ServiceProvider provider){
 		this.provider = provider;
 	}
+
+	public String getName(){
+		return "TerminalTranslator";
+	}
