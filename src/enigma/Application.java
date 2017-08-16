@@ -33,7 +33,10 @@ public class Application {
 
 
     public static void showMainMenu(){
-        
+        System.out.println("first argument: -e (enciper) / -d (deciper) option to start in decrypting mode");
+        System.out.println("                -l to check available mode");
+        System.out.println("second argument: name of decrypting mode");
+        System.out.println("third argument: key of decrypting mode if you need it");
     }
 
 }
