@@ -25,8 +25,8 @@ public class Application {
 
 		enigmaRep = initializeServiceRepository();
 
-		cipherName = checkCipherName(cipherName, enigmaRep);
-		nameTestResult(cipherName);
+		// cipherName = checkCipherName(cipherName, enigmaRep);
+		// nameTestResult(cipherName);
 
         terminalTranslator = new TerminalTranslator(mode, cipherName, cipherKey);
         terminalTranslator.initialize(enigmaRep);
