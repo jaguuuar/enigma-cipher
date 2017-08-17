@@ -34,7 +34,7 @@ public class ForwardBackCipher implements EnigmaService {
                 }
             }
         }
-		return "###### ciphered: "+encipherText+" #####";
+		return encipherText;
 	}
 
 	public String decipher(String text)
@@ -62,7 +62,7 @@ public class ForwardBackCipher implements EnigmaService {
                 }
             }
         }
-		return "###### deciphered: "+decipherText+" #####";
+		return decipherText;
 	}
 
 	public String getName(){
