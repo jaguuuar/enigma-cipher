@@ -16,14 +16,14 @@ public class ForwardBackCipher implements EnigmaService {
 
         for (int i = 0; i < text.length(); i++)
         {
-            char textCharacter = Character.toLowerCase(text.charAt(i));
+            char textCharacter = text.charAt(i);
 
             if (!Character.isLetter(textCharacter))
                 encipherText += textCharacter;
 
             else
             {
-                for (int j = 1; j < 27; j++)
+                for (int j = 1; j < 55; j++)
                 {
                     char alphabetLetter = alphabet[j];
                     if(textCharacter == alphabetLetter )
@@ -44,14 +44,14 @@ public class ForwardBackCipher implements EnigmaService {
 
         for (int i = 0; i < text.length(); i++)
         {
-            char textCharacter = Character.toLowerCase(text.charAt(i));
+            char textCharacter = text.charAt(i);
 
             if (!Character.isLetter(textCharacter))
                 decipherText += textCharacter;
 
             else
             {
-                for (int j = 1; j < 27; j++)
+                for (int j = 1; j < 55; j++)
                 {
                     char alphabetLetter = alphabet[j];
                     if(textCharacter == alphabetLetter )
@@ -77,13 +77,20 @@ public class ForwardBackCipher implements EnigmaService {
 
     public static char[] makeAlphabetTable()
     {
-        char[] alpha = new char[28];
-        alpha[0] = 'z'; alpha[27] = 'a';
+		char[] alpha = new char[56];
+        alpha[0] = 'Z'; alpha[27] = 'A';
+        alpha[28] = 'z'; alpha[55] = 'a';
         int k = 0;
         for(int i = 1; i < 27; i++)
         {
+            alpha[i] = (char)(65 + (k++));
+        }
+        k = 0;
+        for(int i = 29; i < 55; i++)
+        {
             alpha[i] = (char)(97 + (k++));
         }
+
         return alpha;
     }
 
