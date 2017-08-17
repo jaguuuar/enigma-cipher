@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class MorseCipher {
+public class MorseCipher implements EnigmaService {
 
     public static final boolean KEY_REQUIRED = false;
 
