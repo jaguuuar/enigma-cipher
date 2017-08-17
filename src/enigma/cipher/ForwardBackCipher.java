@@ -30,6 +30,7 @@ public class ForwardBackCipher implements EnigmaService {
                     {
                         encipherText += alphabet[j + 1];
                         encipherText += alphabet[j - 1];
+						j = 55;
                     }
                 }
             }
@@ -57,6 +58,7 @@ public class ForwardBackCipher implements EnigmaService {
                     if(textCharacter == alphabetLetter )
                     {
                         decipherText += alphabet[j - 1];
+						j = 55;
                         i++;
                     }
                 }
