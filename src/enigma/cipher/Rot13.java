@@ -59,4 +59,8 @@ public class Rot13 implements EnigmaService{
     public String getName(){
 		return "Rot";
     }
+
+    public boolean isKeyRequired(){
+        return KEY_REQUIRED;
+    }
 }
