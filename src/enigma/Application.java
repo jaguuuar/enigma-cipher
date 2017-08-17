@@ -7,21 +7,15 @@ import enigma.cipher.*;
 public class Application {
 
 	public static void main(String[] args) {
+
         String mode = null, cipherName = null, cipherKey = null;
         ServiceRepository enigmaRep;
         TerminalTranslator terminalTranslator;
 
-
-        try {
-            mode = args[0];
-            cipherName = args[1];
-            if (args.length == 3)
-                cipherKey = args[2];
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-				showMainMenu();
-		}
-
+		mode = ifMode(args);
+		cipherName = ifCipherName(args);
+		cipherKey = ifCipherKey(args);
+		noArgsInfo(mode);
 
         enigmaRep = initializeServiceRepository();
 
@@ -36,7 +30,6 @@ public class Application {
         enigmaRep.register(new NumericCipher());
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
-		//enigmaRep.register(new MorseCipher());
 	    return enigmaRep;
     }
 
@@ -47,5 +40,42 @@ public class Application {
                            "\nsecond argument: name of decrypting mode" +
                            "\nthird argument: key of decrypting mode if you need it\n");
     }
+
+
+	public static String ifMode(String[] args)
+	{
+		if(args.length > 0)
+			return args[0];
+
+		return null;
+	}
+
+	public static String ifCipherName(String[] args)
+	{
+		if(args.length > 1 && args.length <= 3)
+			return args[1];
+
+		return null;
+	}
+
+	public static String ifCipherKey(String[] args)
+	{
+		if(args.length == 3)
+			return args[2];
+
+		return null;
+	}
+
+	public static void noArgsInfo(String mode)
+	{
+		if (mode == null)
+			showMainMenu();
+	}
+
+
+
+
+
+
 
 }
