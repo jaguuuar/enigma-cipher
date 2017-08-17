@@ -23,14 +23,13 @@ public class ForwardBackCipher implements EnigmaService {
 
             else
             {
-                for (int j = 1; j < 55; j++)
+                for (int j = 1; j < 53; j++)
                 {
                     char alphabetLetter = alphabet[j];
                     if(textCharacter == alphabetLetter )
                     {
                         encipherText += alphabet[j + 1];
                         encipherText += alphabet[j - 1];
-						j = 55;
                     }
                 }
             }
@@ -52,13 +51,12 @@ public class ForwardBackCipher implements EnigmaService {
 
             else
             {
-                for (int j = 1; j < 55; j++)
+                for (int j = 1; j < 53; j++)
                 {
                     char alphabetLetter = alphabet[j];
                     if(textCharacter == alphabetLetter )
                     {
                         decipherText += alphabet[j - 1];
-						j = 55;
                         i++;
                     }
                 }
@@ -79,16 +77,16 @@ public class ForwardBackCipher implements EnigmaService {
 
     public static char[] makeAlphabetTable()
     {
-		char[] alpha = new char[56];
-        alpha[0] = 'Z'; alpha[27] = 'A';
-        alpha[28] = 'z'; alpha[55] = 'a';
+		char[] alpha = new char[54];
+        alpha[0] = 'z'; alpha[53] = 'A';
         int k = 0;
         for(int i = 1; i < 27; i++)
         {
             alpha[i] = (char)(65 + (k++));
         }
+
         k = 0;
-        for(int i = 29; i < 55; i++)
+        for(int i = 27; i < 53; i++)
         {
             alpha[i] = (char)(97 + (k++));
         }

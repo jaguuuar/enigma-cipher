@@ -30,7 +30,6 @@ public class Application {
         terminalTranslator.start();
     }
 
-
     public static ServiceRepository initializeServiceRepository() {
         ServiceRepository enigmaRep = new ServiceRepository();
         enigmaRep.register(new NumericCipher());
