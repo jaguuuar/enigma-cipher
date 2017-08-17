@@ -16,7 +16,14 @@ public class NumericCipher implements EnigmaService{
   public String encipher(String text){
 
     String newString = "";
-    HashMap<String, String> keyCipher = DataManager.loadFile("data_manager/numbersCipher.txt");
+    HashMap<String, String> keyCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
+
+    for (String name: keyCipher.keySet()){
+
+            String key = name.toString();
+            String value = keyCipher.get(name).toString();
+
+    }
 
     for (int i = 0; i < text.length(); i ++){
       Character letter = text.charAt(i);
@@ -24,13 +31,13 @@ public class NumericCipher implements EnigmaService{
       newString += keyCipher.get(letter.toString());
     }
 
-    return "ciphered: "+newString;
+    return "ciphered: " + newString;
   }
 
   public String decipher(String text){
 
     String deciphredText = "";
-    HashMap<String, String> keysCipher = DataManager.loadFile("data_manager/numbersCipher.txt");
+    HashMap<String, String> keysCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
 
     for (int i = 0; i < text.length(); i = i + 2){
       Character number1 = text.charAt(i);
