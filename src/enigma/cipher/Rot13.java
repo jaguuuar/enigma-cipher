@@ -30,4 +30,11 @@ public class Rot13 implements EnigmaService{
             }
 		}
         return "cipher: " + rot13;
+
+    public String decipher(String text){
+        String rot13 = "";
+        int len = text.length();
+        for (int i = 0; i < len; i++) {
+            char c = text.charAt(i);
+        }
 }
