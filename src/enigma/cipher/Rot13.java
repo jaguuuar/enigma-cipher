@@ -29,7 +29,7 @@ public class Rot13 implements EnigmaService{
                 rot13 += (char) (text.charAt(i) -13);
             }
 		}
-        return "cipher: " + rot13;
+        return rot13;
     }
 
     public String decipher(String text){
@@ -53,7 +53,7 @@ public class Rot13 implements EnigmaService{
                 rot13 += (char) (text.charAt(i) - 13);
             }
         }
-        return "decipher: " + rot13;
+        return rot13;
     }
 
     public String getName(){
