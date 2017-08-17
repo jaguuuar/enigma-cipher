@@ -15,12 +15,12 @@ public class MorseCipher implements EnigmaService {
     public String encipher(String text) {
 
         String encipheredText = "";
-        HashMap<String, String> morseCode = DataManager.loadFile("data_manager/morse_code.txt");
+        HashMap<String, String> morseCode = DataManager.loadFile("src/enigma/cipher/data_manager/morse_code.txt");
 
         for (int i = 0; i < text.length(); i ++){
           Character letter = text.charAt(i);
 
-          if (!letter.toString().equals("~")) {
+          if (!letter.toString().equals(" ")) {
             encipheredText += morseCode.get(letter.toString()) + "#";
             }
         }
@@ -31,21 +31,9 @@ public class MorseCipher implements EnigmaService {
     public String decipher(String text){
 
         String deciphredText = "";
-        HashMap<String, String> morseCode = DataManager.loadFile("numberscipher.txt");
-
-        for (int i = 0; i < text.length(); i = i + 2){
-          Character number1 = text.charAt(i);
-          Character number2 = text.charAt(i+1);
-          String hiddenLetter = number1.toString() + number2.toString();
-
-          for (String key: keysCipher.keySet()){
-            if (keysCipher.get(key).equals(hiddenLetter)){
-              deciphredText += key;
-            }
-          }
-        }
-    	return deciphredText;
-	}
+        HashMap<String, String> keysCipher = DataManager.loadFile("src/enigma/cipher/data_manager/morse_code.txt");
+        return deciphredText;
+    }
 
     public String getName(){
 		return "MorseCipher";
