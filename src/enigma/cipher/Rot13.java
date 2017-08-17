@@ -36,5 +36,21 @@ public class Rot13 implements EnigmaService{
         int len = text.length();
         for (int i = 0; i < len; i++) {
             char c = text.charAt(i);
+            if (c >= 'a' && c <= 'm'){
+                rot13 += (char) (text.charAt(i) + 13);
+            }
+
+            else if (c >= 'A' && c <= 'M'){
+                rot13 += (char) (text.charAt(i) + 13);
+            }
+
+            else if (c >= 'n' && c <= 'z'){
+                rot13 += (char) (text.charAt(i) - 13);
+            }
+
+            else if (c >= 'N' && c <= 'Z'){
+                rot13 += (char) (text.charAt(i) - 13);
+            }
+        return "decipher: " + rot13;
         }
 }
