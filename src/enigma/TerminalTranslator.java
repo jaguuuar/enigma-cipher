@@ -46,6 +46,10 @@ public class TerminalTranslator {
 					System.out.println(cipherName);
 				}
 			}
+			else {
+				System.out.println("Wrong option name!");
+				Application.showMainMenu();
+			}
 		}
 		catch (NullPointerException e) {
 			System.out.println("Wrong cipher name, use -l to see available cipher methods.");
