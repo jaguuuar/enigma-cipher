@@ -41,7 +41,6 @@ public class TerminalTranslator {
 				}
 			}
 			else if (mode.equalsIgnoreCase("-l")){
-				System.out.println("Available Cipher Method:");
 				for (String cipherName : provider.listAll()){
 					System.out.println(cipherName);
 				}
