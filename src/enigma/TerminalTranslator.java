@@ -28,21 +28,28 @@ public class TerminalTranslator {
 		EnigmaService enigma = provider.getByName(cipherName);
 		Scanner scan = new Scanner(System.in);
 
-        if (mode.equals("-e")){
-			while(scan.hasNextLine()){
-				System.out.println(enigma.encipher(scan.nextLine()));
+		try {
+
+	        if (mode.equals("-e")){
+				while(scan.hasNextLine()){
+					System.out.println(enigma.encipher(scan.nextLine()));
+				}
+			}
+			else if (mode.equalsIgnoreCase("-d")){
+				while(scan.hasNextLine()){
+					System.out.println(enigma.decipher(scan.nextLine()));
+				}
+			}
+			else if (mode.equalsIgnoreCase("-l")){
+				System.out.println("Available Cipher Method:");
+				for (String cipherName : provider.listAll()){
+					System.out.println(cipherName);
+				}
 			}
 		}
-		else if (mode.equalsIgnoreCase("-d")){
-			while(scan.hasNextLine()){
-				System.out.println(enigma.decipher(scan.nextLine()));
-			}
+		catch (NullPointerException e) {
+			System.out.println("Wrong cipher name, use -l to see available cipher methods.");
 		}
-		else if (mode.equalsIgnoreCase("-l")){
-			System.out.println("Available Cipher Method:");
-			for (String cipherName : provider.listAll()){
-				System.out.println(cipherName);
-			}
-		}
+
 	}
 }
