@@ -33,8 +33,11 @@ public class Application {
 
     public static ServiceRepository initializeServiceRepository() {
         ServiceRepository enigmaRep = new ServiceRepository();
-        enigmaRep.register(new ForwardBackCipher());
-        return enigmaRep;
+        enigmaRep.register(new NumericCipher());
+		enigmaRep.register(new MirrorCipher());
+		enigmaRep.register(new ForwardBackCipher());
+		//enigmaRep.register(new MorseCipher());
+	    return enigmaRep;
     }
 
     public static void showMainMenu(){
