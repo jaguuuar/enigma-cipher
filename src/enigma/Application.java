@@ -25,9 +25,6 @@ public class Application {
 
 		enigmaRep = initializeServiceRepository();
 
-		// cipherName = checkCipherName(cipherName, enigmaRep);
-		// nameTestResult(cipherName);
-
         terminalTranslator = new TerminalTranslator(mode, cipherName, cipherKey);
         terminalTranslator.initialize(enigmaRep);
         terminalTranslator.start();
@@ -39,6 +36,7 @@ public class Application {
         enigmaRep.register(new NumericCipher());
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
+                enigmaRep.register(new Rot13());
 	    return enigmaRep;
     }
 

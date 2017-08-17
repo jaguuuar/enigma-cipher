@@ -31,26 +31,31 @@ public class NumericCipher implements EnigmaService{
       newString += keyCipher.get(letter.toString());
     }
 
-    return "ciphered: " + newString;
+    return newString;
   }
 
   public String decipher(String text){
 
     String deciphredText = "";
     HashMap<String, String> keysCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
+    if (text.length() % 2 == 0){
+      for (int i = 0; i < text.length(); i = i + 2){
+        Character number1 = text.charAt(i);
+        Character number2 = text.charAt(i+1);
+        String hiddenLetter = number1.toString() + number2.toString();
 
-    for (int i = 0; i < text.length(); i = i + 2){
-      Character number1 = text.charAt(i);
-      Character number2 = text.charAt(i+1);
-      String hiddenLetter = number1.toString() + number2.toString();
-
-      for (String key: keysCipher.keySet()){
-        if (keysCipher.get(key).equals(hiddenLetter)){
-          deciphredText += key;
+        for (String key: keysCipher.keySet()){
+          if (keysCipher.get(key).equals(hiddenLetter)){
+            deciphredText += key;
+          }
         }
       }
     }
-		return "deciphered: "+deciphredText;
+    else{
+      System.out.println("This text is not combilabe with Numeric Cipher enigma code.");
+      System.exit(0);
+    }
+		return deciphredText;
 	}
 
   public String getName(){

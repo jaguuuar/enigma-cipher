@@ -25,7 +25,7 @@ public class MorseCipher {
             }
         }
 
-        return "######## ciphered: " + encipheredText + " #########";
+        return encipheredText;
 	}
 
     public String decipher(String text){
@@ -44,7 +44,7 @@ public class MorseCipher {
             }
           }
         }
-    	return "deciphered: "+deciphredText;
+    	return deciphredText;
 	}
 
     public String getName(){
