@@ -7,17 +7,15 @@ import enigma.cipher.*;
 public class Application {
 
 	public static void main(String[] args) {
+
         String mode = null, cipherName = null, cipherKey = null;
         ServiceRepository enigmaRep;
         TerminalTranslator terminalTranslator;
-
-
 
 		mode = ifMode(args);
 		cipherName = ifCipherName(args);
 		cipherKey = ifCipherKey(args);
 		noArgsInfo(mode);
-
 
         enigmaRep = initializeServiceRepository();
 
@@ -32,7 +30,6 @@ public class Application {
         enigmaRep.register(new NumericCipher());
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
-		//enigmaRep.register(new MorseCipher());
 	    return enigmaRep;
     }
 
@@ -74,6 +71,7 @@ public class Application {
 		if (mode == null)
 			showMainMenu();
 	}
+
 
 
 
