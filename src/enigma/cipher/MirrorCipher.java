@@ -1,4 +1,4 @@
-package cipher;
+package enigma.cipher;
 
 import services.EnigmaService;
 import java.util.Scanner;
