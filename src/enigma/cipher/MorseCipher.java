@@ -1,6 +1,8 @@
-package cipher;
+package enigma.cipher;
 
 import services.EnigmaService;
+import enigma.cipher.data_manager.DataManager;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -18,8 +20,9 @@ public class MorseCipher {
         for (int i = 0; i < text.length(); i ++){
           Character letter = text.charAt(i);
 
-          if (!letter.toString().equals("~")):
+          if (!letter.toString().equals("~")) {
             encipheredText += morseCode.get(letter.toString()) + "#";
+            }
         }
 
         return "######## ciphered: " + encipheredText + " #########";
