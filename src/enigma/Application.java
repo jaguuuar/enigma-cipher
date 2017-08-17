@@ -3,6 +3,12 @@ package enigma;
 import services.EnigmaService;
 import app.Module;
 import enigma.cipher.*;
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class Application {
 
@@ -17,7 +23,10 @@ public class Application {
 		cipherKey = ifCipherKey(args);
 		noArgsInfo(mode);
 
-        enigmaRep = initializeServiceRepository();
+		enigmaRep = initializeServiceRepository();
+
+		cipherName = checkCipherName(cipherName, enigmaRep);
+		nameTestResult(cipherName);
 
         terminalTranslator = new TerminalTranslator(mode, cipherName, cipherKey);
         terminalTranslator.initialize(enigmaRep);
@@ -46,7 +55,7 @@ public class Application {
 	public static String ifMode(String[] args)
 	{
 		if(args.length > 0)
-			return args[0];
+			return args[0].trim();
 
 		return null;
 	}
@@ -73,9 +82,24 @@ public class Application {
 			showMainMenu();
 	}
 
+	public static String checkCipherName(String cipherName, ServiceRepository enigmaRep)
+	{
+		for (String name: enigmaRep.listAll()){
+			if (name.equals(cipherName))
+				return cipherName;
+		}
+		return null;
+	}
 
-
-
+	public static void nameTestResult(String cipherName)
+	{
+		if (cipherName == null)
+		{
+			System.out.println("Wrong cipher name!");
+			showMainMenu();
+			System.exit(0);
+		}
+	}
 
 
 
