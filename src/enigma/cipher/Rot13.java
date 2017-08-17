@@ -53,4 +53,8 @@ public class Rot13 implements EnigmaService{
             }
         return "decipher: " + rot13;
         }
+
+        public String getName(){
+    		return "Rot";
+    	}
 }
