@@ -1,3 +1,6 @@
+package cipher;
+
+import services.EnigmaService;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -7,20 +10,42 @@ public class MorseCipher {
 
     public MorseCipher() {}
 
-    public static void main(String[] args){
+    public String encipher(String text) {
 
-    }
+        String encipheredText = "";
+        HashMap<String, String> morseCode = DataManager.loadFile("data_manager/morse_code.txt");
 
-    public String encipher(String text){
-		return "###### ciphered: "+text+" #####";
+        for (int i = 0; i < text.length(); i ++){
+          Character letter = text.charAt(i);
+
+          if (!letter.toString().equals("~")):
+            encipheredText += morseCode.get(letter.toString()) + "#";
+        }
+
+        return "######## ciphered: " + encipheredText + " #########";
 	}
 
     public String decipher(String text){
-		return "###### deciphered: "+text+" #####";
+
+        String deciphredText = "";
+        HashMap<String, String> morseCode = DataManager.loadFile("numberscipher.txt");
+
+        for (int i = 0; i < text.length(); i = i + 2){
+          Character number1 = text.charAt(i);
+          Character number2 = text.charAt(i+1);
+          String hiddenLetter = number1.toString() + number2.toString();
+
+          for (String key: keysCipher.keySet()){
+            if (keysCipher.get(key).equals(hiddenLetter)){
+              deciphredText += key;
+            }
+          }
+        }
+    	return "deciphered: "+deciphredText;
 	}
 
     public String getName(){
-		return "FakeEnigma";
+		return "MorseCipher";
 	}
 
     public boolean isKeyRequired(){
