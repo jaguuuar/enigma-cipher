@@ -11,12 +11,12 @@ public class MirrorCipher implements EnigmaService{
 
 		public String encipher(String text){
 		  String reverse = new StringBuffer(text).reverse().toString();
-		  return "###### ciphered: "+reverse+" #####";
+		  return reverse;
 		}
 
 		public String decipher(String text){
 		  String reverse = new StringBuffer(text).reverse().toString();
-		  return "###### deciphered: "+reverse+" #####";
+		  return reverse;
 		}
 
 		public String getName(){
