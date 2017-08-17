@@ -1,6 +1,7 @@
-package cipher;
+package enigma.cipher;
 
 import services.EnigmaService;
+import enigma.cipher.data_manager.DataManager;
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
@@ -9,10 +10,13 @@ public class NumericCipher implements EnigmaService{
 
   public static final boolean KEY_REQUIRED = false;
 
+  public NumericCipher() {
+  }
+
   public String encipher(String text){
 
     String newString = "";
-    HashMap<String, String> keyCipher = DataManager.loadFile("data_manager/numberscipher.txt");
+    HashMap<String, String> keyCipher = DataManager.loadFile("data_manager/numbersCipher.txt");
 
     for (int i = 0; i < text.length(); i ++){
       Character letter = text.charAt(i);
@@ -23,10 +27,10 @@ public class NumericCipher implements EnigmaService{
     return "ciphered: "+newString;
   }
 
-  public String dencipher(String text){
+  public String decipher(String text){
 
     String deciphredText = "";
-    HashMap<String, String> keysCipher = DataManager.loadFile("numberscipher.txt");
+    HashMap<String, String> keysCipher = DataManager.loadFile("data_manager/numbersCipher.txt");
 
     for (int i = 0; i < text.length(); i = i + 2){
       Character number1 = text.charAt(i);
