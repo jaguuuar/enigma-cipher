@@ -30,6 +30,7 @@ public class Application {
         enigmaRep.register(new NumericCipher());
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
+                enigmaRep.register(new Rot13());
 	    return enigmaRep;
     }
 
