@@ -31,6 +31,9 @@ public class Rot13 implements EnigmaService{
             else if (c == (' ')){
                 rot13 += (char) (text.charAt(i));
             }
+            else {
+                rot13 += (char) (text.charAt(i));
+            }
 		}
         return rot13;
     }
@@ -56,6 +59,9 @@ public class Rot13 implements EnigmaService{
                 rot13 += (char) (text.charAt(i) - 13);
             }
             else if (c == (' ')){
+                rot13 += (char) (text.charAt(i));
+            }
+            else {
                 rot13 += (char) (text.charAt(i));
             }
         }
