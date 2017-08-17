@@ -28,8 +28,11 @@ public class Rot13 implements EnigmaService{
             else if (c >= 'N' && c <= 'Z'){
                 rot13 += (char) (text.charAt(i) -13);
             }
+            else if (c == (' ')){
+                rot13 += (char) (text.charAt(i));
+            }
 		}
-        return "cipher: " + rot13;
+        return rot13;
     }
 
     public String decipher(String text){
@@ -52,8 +55,11 @@ public class Rot13 implements EnigmaService{
             else if (c >= 'N' && c <= 'Z'){
                 rot13 += (char) (text.charAt(i) - 13);
             }
+            else if (c == (' ')){
+                rot13 += (char) (text.charAt(i));
+            }
         }
-        return "decipher: " + rot13;
+        return rot13;
     }
 
     public String getName(){
