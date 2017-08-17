@@ -1,4 +1,4 @@
-package data_manager;
+package enigma.cipher.data_manager;
 
 import java.io.File;
 import java.util.Scanner;
