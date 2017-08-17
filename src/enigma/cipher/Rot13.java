@@ -63,4 +63,6 @@ public class Rot13 implements EnigmaService{
     public boolean isKeyRequired(){
         return KEY_REQUIRED;
     }
+
+    public void setKey(String key){}
 }
