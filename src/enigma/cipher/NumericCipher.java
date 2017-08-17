@@ -31,7 +31,7 @@ public class NumericCipher implements EnigmaService{
       newString += keyCipher.get(letter.toString());
     }
 
-    return "ciphered: " + newString;
+    return newString;
   }
 
   public String decipher(String text){
@@ -55,7 +55,7 @@ public class NumericCipher implements EnigmaService{
       System.out.println("This text is not combilabe with Numeric Cipher enigma code.");
       System.exit(0);
     }
-		return "deciphered: "+deciphredText;
+		return deciphredText;
 	}
 
   public String getName(){
