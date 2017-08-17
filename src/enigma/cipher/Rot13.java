@@ -30,6 +30,7 @@ public class Rot13 implements EnigmaService{
             }
 		}
         return "cipher: " + rot13;
+    }
 
     public String decipher(String text){
         String rot13 = "";
@@ -51,10 +52,11 @@ public class Rot13 implements EnigmaService{
             else if (c >= 'N' && c <= 'Z'){
                 rot13 += (char) (text.charAt(i) - 13);
             }
-        return "decipher: " + rot13;
         }
+        return "decipher: " + rot13;
+    }
 
-        public String getName(){
-    		return "Rot";
-    	}
+    public String getName(){
+		return "Rot";
+    }
 }
