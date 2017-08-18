@@ -1,0 +1,15 @@
+<file>:<line>, Note: <note>
+/src/enigma/cipher/data_manager/DataManager.java:28, Note: JA: multiple exits
+/src/enigma/cipher/MorseCipher.java:58, Note: JA: it would be easier to have reversed HashMap, so that we don't have to iterate over everything
+/src/enigma/cipher/MorseCipher.java:11, Note: JA: should be placed in constructor
+/src/enigma/cipher/data_manager/DataManager.java:8, Note: OOP: good idea
+/src/enigma/cipher/data_manager/DataManager.java:24, Note: JA: file closing shoud be placed in finally block
+/src/enigma/TerminalTranslator.java:43, Note: CC: inconsistent usage of equals
+/src/enigma/TerminalTranslator.java:43, Note: CC: code duplication
+/src/enigma/TerminalTranslator.java:50, Note: CC: Listing enigmas should be the responisbility of App
+/src/enigma/TerminalTranslator.java:29, Note: CC: wut? engrish?
+/src/enigma/Application.java:59, Note: CC: bad naming, this suggests boolean return type
+/src/enigma/Application.java:50, Note: CC: you could create View class for this
+/src/enigma/Application.java:38, Note: CC: good idea, you even could move it to a separate file
+/src/enigma/Application.java:17, Note: CC: don't use oneline declaration
+
