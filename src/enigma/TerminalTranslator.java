@@ -26,6 +26,7 @@ public class TerminalTranslator {
 
 	/**
 	* Method to translate user input in console to use program.
+	* If user not writed anything text, program send message.
 	*/
 	public void start(){
 		EnigmaService enigma = provider.getByName(cipherName);
