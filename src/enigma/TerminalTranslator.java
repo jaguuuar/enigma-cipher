@@ -24,6 +24,9 @@ public class TerminalTranslator {
 		return "TerminalTranslator";
 	}
 
+	/**
+	* Method to translate user input in console to use program.
+	*/
 	public void start(){
 		EnigmaService enigma = provider.getByName(cipherName);
 		Scanner scan = new Scanner(System.in);
@@ -35,16 +38,19 @@ public class TerminalTranslator {
 					System.out.println(enigma.encipher(scan.nextLine()));
 				}
 			}
+
 			else if (mode.equalsIgnoreCase("-d")){
 				while(scan.hasNextLine()){
 					System.out.println(enigma.decipher(scan.nextLine()));
 				}
 			}
+
 			else if (mode.equalsIgnoreCase("-l")){
 				for (String cipherName : provider.listAll()){
 					System.out.println(cipherName);
 				}
 			}
+
 			else {
 				System.out.println("Wrong option name!");
 				Application.showMainMenu();
