@@ -30,6 +30,11 @@ public class Application {
         terminalTranslator.start();
     }
 
+	/**
+	* Register all methods from ./enigma/cipher package
+	*
+	* @return     ServiceRepository, method chosen by user
+	*/
     public static ServiceRepository initializeServiceRepository() {
         ServiceRepository enigmaRep = new ServiceRepository();
         enigmaRep.register(new NumericCipher());
@@ -39,6 +44,7 @@ public class Application {
 
 	    return enigmaRep;
     }
+
 
     public static void showOptionsMenu(){
         System.out.println("first argument: -e (enciper) /" +
