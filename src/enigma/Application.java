@@ -18,9 +18,9 @@ public class Application {
         ServiceRepository enigmaRep;
         TerminalTranslator terminalTranslator;
 
-		mode = ifMode(args);
-		cipherName = ifCipherName(args);
-		cipherKey = ifCipherKey(args);
+		mode = checkIfMode(args);
+		cipherName = checkIfCipherName(args);
+		cipherKey = checkIfCipherKey(args);
 		noArgsInfo(mode);
 
 		enigmaRep = initializeServiceRepository();
@@ -36,12 +36,12 @@ public class Application {
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
         enigmaRep.register(new Rot13());
-		enigmaRep.register(new MorseCipher());
+		//enigmaRep.register(new MorseCipher());
 
 	    return enigmaRep;
     }
 
-    public static void showMainMenu(){
+    public static void showOptionsMenu(){
         System.out.println("first argument: -e (enciper) /" +
                            "-d (deciper) option to start in decrypting mode" +
                            "\n-l to check available mode" +
@@ -50,7 +50,7 @@ public class Application {
     }
 
 
-	public static String ifMode(String[] args)
+	public static String checkIfMode(String[] args)
 	{
 		if(args.length > 0)
 			return args[0].trim();
@@ -58,7 +58,7 @@ public class Application {
 		return null;
 	}
 
-	public static String ifCipherName(String[] args)
+	public static String checkIfCipherName(String[] args)
 	{
 		if(args.length > 1 && args.length <= 3)
 			return args[1];
@@ -66,7 +66,7 @@ public class Application {
 		return null;
 	}
 
-	public static String ifCipherKey(String[] args)
+	public static String checkIfCipherKey(String[] args)
 	{
 		if(args.length == 3)
 			return args[2];
@@ -77,7 +77,7 @@ public class Application {
 	public static void noArgsInfo(String mode)
 	{
 		if (mode == null)
-			showMainMenu();
+			showOptionsMenu();
 	}
 
 	public static String checkCipherName(String cipherName, ServiceRepository enigmaRep)
@@ -94,7 +94,7 @@ public class Application {
 		if (cipherName == null)
 		{
 			System.out.println("Wrong cipher name!");
-			showMainMenu();
+			showOptionsMenu();
 			System.exit(0);
 		}
 	}
