@@ -9,6 +9,12 @@ public class ForwardBackCipher implements EnigmaService {
 	public ForwardBackCipher(){
 	}
 
+	/**
+    * Encipher text from user input.
+    *
+    * @param text text from user input to encrypt
+    * @return     String, encrypted text
+    */
 	public String encipher(String text)
     {
         char[] alphabet = makeAlphabetTable();
@@ -37,6 +43,12 @@ public class ForwardBackCipher implements EnigmaService {
 		return encipherText;
 	}
 
+	/**
+    * Decipher text from user input.
+    *
+    * @param text text from user input to decrypt
+    * @return     String, decrypted text
+    */
 	public String decipher(String text)
     {
         char[] alphabet = makeAlphabetTable();
@@ -75,6 +87,12 @@ public class ForwardBackCipher implements EnigmaService {
 
 	public void setKey(String key) {}
 
+
+	/**
+    * Create upper and lower case alphabet.
+    *
+    * @return     char [], table of chars with alphabet letters.
+    */
     public static char[] makeAlphabetTable()
     {
 		char[] alpha = new char[54];
