@@ -41,7 +41,7 @@ public class Application {
 		enigmaRep.register(new MirrorCipher());
 		enigmaRep.register(new ForwardBackCipher());
         enigmaRep.register(new Rot13());
-		enigmaRep.register(new MorseCipher();)
+		enigmaRep.register(new MorseCipher());
 
 	    return enigmaRep;
     }
