@@ -54,7 +54,7 @@ public class TerminalTranslator {
 
 			else {
 				System.out.println("Wrong option name!");
-				Application.showMainMenu();
+				Application.showOptionsMenu();
 			}
 		}
 		catch (NullPointerException e) {
