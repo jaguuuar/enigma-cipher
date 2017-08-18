@@ -9,14 +9,21 @@ import java.util.HashMap;
 public class NumericCipher implements EnigmaService{
 
   public static final boolean KEY_REQUIRED = false;
+  HashMap<String, String> keyCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
 
   public NumericCipher() {
   }
 
+  /**
+  * Encipher text from user input.
+  * Change letters to numbers.
+  *
+  * @param text text from user input to encrypt
+  * @return     String, encrypted text
+  */
   public String encipher(String text){
 
     String newString = "";
-    HashMap<String, String> keyCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
 
     for (String name: keyCipher.keySet()){
 
@@ -34,24 +41,35 @@ public class NumericCipher implements EnigmaService{
     return newString;
   }
 
+  /**
+  * Decipher text from user input.
+  * Change numbers to letters.
+  *
+  * @param text text from user input to decrypt
+  * @return     String, decrypted text
+  */
   public String decipher(String text){
 
     String deciphredText = "";
-    HashMap<String, String> keysCipher = DataManager.loadFile("src/enigma/cipher/data_manager/numbersCipher.txt");
+
     if (text.length() % 2 == 0){
+
       for (int i = 0; i < text.length(); i = i + 2){
+
         Character number1 = text.charAt(i);
         Character number2 = text.charAt(i+1);
         String hiddenLetter = number1.toString() + number2.toString();
 
-        for (String key: keysCipher.keySet()){
-          if (keysCipher.get(key).equals(hiddenLetter)){
+        for (String key: keyCipher.keySet()){
+          if (keyCipher.get(key).equals(hiddenLetter)){
             deciphredText += key;
           }
         }
       }
     }
-    else{
+
+    else {
+
       System.out.println("This text is not combilabe with Numeric Cipher enigma code.");
       System.exit(0);
     }
