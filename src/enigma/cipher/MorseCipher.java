@@ -33,6 +33,25 @@ public class MorseCipher implements EnigmaService {
         return encipheredText;
 	}
 
+    public String decipher(String text) {
+
+        String deciphredText = "";
+        ArrayList<String[]> splittedWords = splitEncryptedText(text);
+
+        for (String[] array : splittedWords) {
+            for (String letter : array) {
+                for (String key: morseCode.keySet()){
+                    if (morseCode.get(key).equals(letter)){
+                        deciphredText += key;
+                    }
+                }
+            }
+            deciphredText += " ";
+        }
+
+        return deciphredText.trim();
+    }
+
     public String getName(){
 		return "MorseCipher";
 	}
